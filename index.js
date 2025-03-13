@@ -2,43 +2,40 @@ const freelanceNames = ["Alice", "Bob", "Carol", "Shannon", "Ari", "Jessica"];
 const freelanceOccupations = ["Writer", "Teacher", "Programmer", "Instructor", "Teaching Assistant", "Learner Experience Manager"];
 const freelancePrices = [30, 50, 70, 55, 65, 45];
 
-let freelancerCount = 1;
-
 function init() {
 
-    const wrapper = document.createElement("div");
-    wrapper.style.display = "flex";
-    wrapper.style.flexDirection = "column";
-    wrapper.style.alignItems = "center";
-    wrapper.style.textAlign = "center";
-    wrapper.style.width = "100%";
-    document.body.append(wrapper);
+    const tagsContainer = document.createElement("div");
+    tagsContainer.style.display = "flex";
+    tagsContainer.style.flexDirection = "column";
+    tagsContainer.style.alignItems = "center";
+    tagsContainer.style.textAlign = "center";
+    tagsContainer.style.width = "100%";
+    document.body.append(tagsContainer);
 
     const h1 = document.createElement("h1");
     h1.innerHTML = "Freelance Forum";
-    wrapper.appendChild(h1);
+    tagsContainer.appendChild(h1);
 
     const p = document.createElement("p");
     p.id = "averagePrice";
-    wrapper.appendChild(p);
+    tagsContainer.appendChild(p);
 
     const h2 = document.createElement("h2");
     h2.innerHTML = "Available Freelancers"
-    wrapper.appendChild(h2);
+    tagsContainer.appendChild(h2);
 
     const titleContainer = document.createElement("div");
     titleContainer.id = "titleContainer";
     titleContainer.style.display = "flex";
     titleContainer.style.justifyContent = "center";
     titleContainer.style.gap = "60px";
-    wrapper.appendChild(titleContainer);
+    document.body.appendChild(titleContainer);
 
     const titles = ["Names", "Occupations", "Starting Price"];
     const container = document.getElementById("titleContainer");
     titles.forEach(title => {
         const span = document.createElement("span");
         span.textContent = title;
-        span.style.justify = "10px";
         container.appendChild(span);
     })
 
@@ -52,7 +49,7 @@ function init() {
     freelanceContainer.style.display = "flex";
     freelanceContainer.style.justifyContent = "center";
     freelanceContainer.style.gap = "60px"
-   wrapper.appendChild(freelanceContainer);
+   document.body.appendChild(freelanceContainer);
 
     function renderFreelancers() {
         freelanceContainer.innerHTML = "";
