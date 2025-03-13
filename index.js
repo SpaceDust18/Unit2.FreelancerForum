@@ -47,11 +47,12 @@ function init() {
     const freelanceContainer = document.createElement("div");
     freelanceContainer.id = "freelanceContainer";
     freelanceContainer.style.display = "flex";
+    freelanceContainer.style.flexDirection = "column";
     freelanceContainer.style.justifyContent = "center";
     freelanceContainer.style.gap = "60px"
    document.body.appendChild(freelanceContainer);
 
-    function renderFreelancers() {
+    function renderfreelancers() {
         freelanceContainer.innerHTML = "";
 
         for (let i = 0; i < freelanceNames.length; i++) {
@@ -91,6 +92,7 @@ function init() {
 
         const freelancerDiv = document.createElement("div");
         freelancerDiv.style.display = "flex";
+        freelancerDiv.style.flexDirection = "column";
         freelancerDiv.style.gap = "10px";
         freelancerDiv.style.marginTop = "5px";
 
@@ -106,17 +108,18 @@ function init() {
         randompriceSpan.textContent = `$${randomPrice}`
         randompriceSpan.style.fontWeight = "bold";
 
-        freelanceContainer.appendChild(randomnameSpan);
-        freelanceContainer.appendChild(randoccSpan);
-        freelanceContainer.appendChild(randompriceSpan);
+        freelancerDiv.appendChild(randomnameSpan);
+        freelancerDiv.appendChild(randoccSpan);
+        freelancerDiv.appendChild(randompriceSpan);
 
         freelanceContainer.appendChild(freelancerDiv);
 
         updateAveragePrice();
     }
-
-   
-    setInterval(addRandomFreelancer, 3000);
+   const add = setInterval(addRandomFreelancer, 3000);
+    setTimeout(() => {
+        clearInterval(add)
+    }, 30000)
 }
 document.addEventListener("DOMContentLoaded", init);
 
