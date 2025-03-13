@@ -4,25 +4,25 @@ const freelancePrices = [30, 50, 70, 55, 65, 45];
 
 function init() {
 
-    const tagsContainer = document.createElement("div");
-    tagsContainer.style.display = "flex";
-    tagsContainer.style.flexDirection = "column";
-    tagsContainer.style.alignItems = "center";
-    tagsContainer.style.textAlign = "center";
-    tagsContainer.style.width = "100%";
-    document.body.append(tagsContainer);
+    const root = document.querySelector("#root");
+    root.style.display = "flex";
+    root.style.flexDirection = "column";
+    root.style.alignItems = "center";
+    root.style.textAlign = "center";
+    root.style.width = "100%";
+   
 
     const h1 = document.createElement("h1");
     h1.innerHTML = "Freelance Forum";
-    tagsContainer.appendChild(h1);
+    root.appendChild(h1);
 
     const p = document.createElement("p");
     p.id = "averagePrice";
-    tagsContainer.appendChild(p);
+    root.appendChild(p);
 
     const h2 = document.createElement("h2");
     h2.innerHTML = "Available Freelancers"
-    tagsContainer.appendChild(h2);
+    root.appendChild(h2);
 
     const titleContainer = document.createElement("div");
     titleContainer.id = "titleContainer";
