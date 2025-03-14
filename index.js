@@ -79,7 +79,7 @@ function init() {
         }
         updateAveragePrice();
     }
-
+renderfreelancers()
     function addRandomFreelancer() {
         
         const newName = freelanceNames[Math.floor(Math.random() * freelanceNames.length)];
@@ -122,4 +122,3 @@ function init() {
     }, 30000)
 }
 document.addEventListener("DOMContentLoaded", init);
-
